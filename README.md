@@ -1,4 +1,4 @@
-Sublime Text Synopsys Constraints Syntax
+Sublime Text Synopsys Designs Constraints Syntax
 =========================================
 
 Sublime Text Synopsys Constraints Syntax
