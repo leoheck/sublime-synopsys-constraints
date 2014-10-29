@@ -1,0 +1,32 @@
+
+# [PackageDev] target_format: plist, ext: tmLanguage
+
+---
+
+name: SDC (Constraints)
+scopeName: source.sdc
+fileTypes: [sdc]
+uuid: 9ea46de4-041f-41fd-938f-0b7a6ea8c383
+
+patterns:
+
+- match: ^([ \t])*#.*
+  name: comment.line.character.sp
+  comment: Comments
+
+- begin: \"
+  end: \"
+  name: string.quoted.double.sp
+  comment: Double quotes
+
+- match: "^[ \t]*(set) "
+  name: keyword.control.sp
+  comment: TCL Commands
+
+- match: "^[ \t]*(create_clock|current_design|set_clock_gating_check|set_clock_latency|set_clock_transition|get_clocks|set_dont_touch_network|set_dont_use|set_ideal_network|set_input_delay|set_input_transition|set_load|set_max_capacitance|set_operating_conditions|set_output_delay|set_units|set_wire_load_selection_group|get_lib_cells|get_ports|get_clocks)"
+  name: keyword.control.sp
+  comment: SDC Commands
+
+- match: "-(name|capacitance|pin_load|min|max|clock|add_delay|library|add_delay|add|period|waveform|time) "
+  name: entity.name.sp
+  comment: Command parameters

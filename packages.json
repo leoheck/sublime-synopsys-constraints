@@ -1,0 +1,17 @@
+{
+	"schema_version": "2.0",
+	"packages": [
+		{
+			"name": "SDC Constraints",
+			"details": "https://github.com/leoheck/sublime-synopsys-constraints",
+			"releases": [
+				{
+					"version": "0.1",
+					"url": "https://github.com/leoheck/sublime-synopsys-constraints/tags/v0.1",
+					"date": "2014-10-29 14:58:00",
+					"sublime_text": "*"
+				}
+			]
+		}
+	]
+}

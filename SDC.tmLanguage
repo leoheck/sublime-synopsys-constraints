@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>sdc</string>
+	</array>
+	<key>name</key>
+	<string>SDC (Constraints)</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Comments</string>
+			<key>match</key>
+			<string>^([ \t])*#.*</string>
+			<key>name</key>
+			<string>comment.line.character.sp</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\"</string>
+			<key>comment</key>
+			<string>Double quotes</string>
+			<key>end</key>
+			<string>\"</string>
+			<key>name</key>
+			<string>string.quoted.double.sp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>TCL Commands</string>
+			<key>match</key>
+			<string>^[ 	]*(set) </string>
+			<key>name</key>
+			<string>keyword.control.sp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>SDC Commands</string>
+			<key>match</key>
+			<string>^[ 	]*(create_clock|current_design|set_clock_gating_check|set_clock_latency|set_clock_transition|get_clocks|set_dont_touch_network|set_dont_use|set_ideal_network|set_input_delay|set_input_transition|set_load|set_max_capacitance|set_operating_conditions|set_output_delay|set_units|set_wire_load_selection_group|get_lib_cells|get_ports|get_clocks)</string>
+			<key>name</key>
+			<string>keyword.control.sp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Command parameters</string>
+			<key>match</key>
+			<string>-(name|capacitance|pin_load|min|max|clock|add_delay|library|add_delay|add|period|waveform|time) </string>
+			<key>name</key>
+			<string>entity.name.sp</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.sdc</string>
+	<key>uuid</key>
+	<string>9ea46de4-041f-41fd-938f-0b7a6ea8c383</string>
+</dict>
+</plist>
