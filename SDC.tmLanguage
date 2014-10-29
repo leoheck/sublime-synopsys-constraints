@@ -32,7 +32,7 @@
 			<key>comment</key>
 			<string>TCL Commands</string>
 			<key>match</key>
-			<string>^[ 	]*(set) </string>
+			<string>^[ 	]*(set|find) </string>
 			<key>name</key>
 			<string>keyword.control.sp</string>
 		</dict>
@@ -40,7 +40,7 @@
 			<key>comment</key>
 			<string>SDC Commands</string>
 			<key>match</key>
-			<string>^[ 	]*(create_clock|current_design|set_clock_gating_check|set_clock_latency|set_clock_transition|get_clocks|set_dont_touch_network|set_dont_use|set_ideal_network|set_input_delay|set_input_transition|set_load|set_max_capacitance|set_operating_conditions|set_output_delay|set_units|set_wire_load_selection_group|get_lib_cells|get_ports|get_clocks)</string>
+			<string>^[ 	]*(reate_clock|all_outputs|set_time_unit|set_load_unit|current_design|set_clock_gating_check|set_clock_latency|set_clock_transition|get_clocks|set_dont_touch_network|set_dont_use|set_ideal_network|set_input_delay|set_input_transition|set_load|set_max_capacitance|set_operating_conditions|set_output_delay|set_units|set_wire_load_selection_group|get_lib_cells|get_ports|get_clocks)</string>
 			<key>name</key>
 			<string>keyword.control.sp</string>
 		</dict>
@@ -48,7 +48,7 @@
 			<key>comment</key>
 			<string>Command parameters</string>
 			<key>match</key>
-			<string>-(name|capacitance|pin_load|min|max|clock|add_delay|library|add_delay|add|period|waveform|time) </string>
+			<string>-(name|capacitance|picoseconds|setup|port|picofarads|pin_load|min|max|rise|fall|clock|add_delay|library|add_delay|add|period|waveform|time) </string>
 			<key>name</key>
 			<string>entity.name.sp</string>
 		</dict>
