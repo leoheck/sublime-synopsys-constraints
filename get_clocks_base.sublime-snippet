@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+get_clocks $0
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>get_c</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sdc</scope>
+  <description>get clocks statement on its own</description>
+</snippet>
