@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+set_input_delay -max ${1:max_value} -clock [get_clocks ${3:clk_name}] [get_ports {${4:port}}] ${5:-clock_fall} ${6:-add_delay}
+set_input_delay -min ${2:min_value} -clock [get_clocks ${3:clk_name}] [get_ports {${4:port}}] ${5:-clock_fall} ${6:-add_delay}
+$0
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sid</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sdc</scope>
+  <description>input delay definition</description>
+</snippet>

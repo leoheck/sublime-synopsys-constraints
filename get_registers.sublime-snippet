@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+[get_registers ${1:register_name}]
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>gr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sdc</scope>
+  <description>get registers statement</description>
+</snippet>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Spice Comments</string>
+	<string>SDC Toggle Comments</string>
 	<key>scope</key>
 	<string>source.sdc</string>
 	<key>settings</key>
@@ -15,6 +15,12 @@
 				<string>TM_COMMENT_START</string>
 				<key>value</key>
 				<string># </string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>TM_COMMENT_DISABLE_INDENT</string>
+				<key>value</key>
+				<string>yes</string>
 			</dict>
 		</array>
 	</dict>
