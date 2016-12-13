@@ -1,11 +1,6 @@
-Sublime Text Synopsys Designs Constraints Syntax
-=========================================
+# Sublime Text Synopsys Designs Constraints (SDC)
 
-Sublime Text Synopsys Constraints Syntax
-
-Install:
-
-Using ``Package Control`` search for ``SDC Constraints``
+Install it using ``Package Control`` search for ``SDC Constraints``
 
 
 Extra tools:
