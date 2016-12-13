@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+create_generated_clock -name ${1:clk} -source [get_pins ${2:source_pins}] [get_pins ${3:clock_pins}]
+$0
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cgc</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sdc</scope>
+  <description>create a generated clock definition</description>
+</snippet>

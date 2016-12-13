@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+set_clock_groups -name ${1:group_name} -asynchronous -group [get_clocks ${2:clock_pins}] -group [get_clocks ${3:clock_pins}]
+$0
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sagc</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sdc</scope>
+  <description>create an asynchronous clock group definition</description>
+</snippet>
