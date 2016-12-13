@@ -1,8 +1,0 @@
-
-name: SDC Toggle Comments
-scope: source.sdc
-settings:
-  shellVariables:
-  - {name: TM_COMMENT_START, value: '# '}
-  - {name: TM_COMMENT_DISABLE_INDENT, value: 'yes'}
-uuid: 38DBCCE5-2005-410C-B7D7-013097751AC8
