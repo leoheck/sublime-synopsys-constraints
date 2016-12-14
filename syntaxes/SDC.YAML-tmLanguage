@@ -1,7 +1,8 @@
+
 # [PackageDev] target_format: plist, ext: tmLanguage
 name: SDC (Constraints)
 scopeName: source.sdc
-fileTypes: ['sdc,xdc']
+fileTypes: [sdc]
 uuid: 9ea46de4-041f-41fd-938f-0b7a6ea8c383
 
 patterns:
