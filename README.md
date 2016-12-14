@@ -1,6 +1,6 @@
-# Sublime Text Synopsys Designs Constraints (SDC)
+# Sublime SDC
 
-Install it using ``Package Control`` search for ``SDC Constraints``
+Synopsys Design Constraints (SDC) for Sublime can be installed using ``Package Control`` searching for ``SDC Constraints``.
 
 
 Extra tools:
