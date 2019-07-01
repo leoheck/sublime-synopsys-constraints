@@ -25,7 +25,7 @@ contexts:
           section_id|setup|setup|source|through|time|to|to_clock|unit|waveform
         )\b
       captures:
-        1: punctuation.separator.parameter.sdc
+        1: punctuation.separator.switch.sdc
         2: support.type.std.sdc
 
   xilinx-parameters-extensions:
@@ -47,7 +47,7 @@ contexts:
           u_set|use_dsp48|used_in|vccaux_io
         )\b
       captures:
-        1: punctuation.separator.parameter.sdc
+        1: punctuation.separator.switch.sdc
         2: support.type.xilinx.sdc
 
 
