@@ -10,10 +10,10 @@ contexts:
     - match: ""
       push: "Packages/TCL/Tcl.sublime-syntax"
       with_prototype:
-        - include: command-parameters
+        - include: standard-parameters
         - include: xilinx-parameters-extensions
 
-  command-parameters:
+  standard-parameters:
     - match: |-
         (?xi)\s(\+|\-)(
           add|add_delay|asynchronous|capacitance|clock|clock_fall|
