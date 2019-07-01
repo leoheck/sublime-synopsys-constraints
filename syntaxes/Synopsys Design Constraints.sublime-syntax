@@ -7,93 +7,11 @@ scope: source.sdc
 
 contexts:
   main:
-    - include: comment-command
-    - include: tcl-commands
-    - include: sdc-commands
-
-  # In TCL (of which SDC is a superset) a comment is actually just another
-  # command.  However it is scoped differently so that's why we're repeating
-  # the end context.  Also we don't want to include any other subtypes like
-  # numbers and variables.
-  comment-command:
-    - match: (#)
-      captures:
-        1: punctuation.definition.comment.sdc
-      push: comment-end
-
-  comment-end:
-    - meta_scope: comment.line.sdc
-    - match: (\\)\s*\n
-      captures:
-        1: punctuation.continuation.sdc
-    - match: \n
-      pop: true
-
-  tcl-commands:
-    - match: |-
-        (?xi)\b(set|find|expr)\b
-      captures:
-        1: variable.function.sdc
-      push: command-end
-    - include: numbers
-
-  sdc-commands:
-    - match: |-
-        (?xi)\b(
-          all_outputs|all_inputs|set_ideal_net|external_driver|fixed_slew|
-          create_clock|create_generated_clock|set_driving_cell|set_drive|
-          define_clock|vfind|external_delay|current_design|
-          derive_clock_uncertainty|derive_pll_clocks|eval|expr|get_cells|
-          get_clocks|get_lib_cells|get_nets|get_pins|get_ports|get_registers|
-          set|set_clock_gating_check|set_clock_groups|set_clock_latency|
-          set_clock_transition|set_clock_uncertainty|set_dont_touch_network|
-          set_dont_use|set_false_path|set_global_assignment|set_ideal_network|
-          set_input_delay|set_input_transition|set_instance_assignment|set_load|
-          set_load_unit|set_location_assignment|set_max_capacitance|
-          set_max_delay|set_min_delay|set_multicycle_path|
-          set_operating_conditions|set_output_delay|set_output_delay|
-          set_property|set_time_format|set_time_unit|set_units|
-          set_wire_load_selection_group
-        )\b
-      captures:
-        1: variable.function.sdc
-      push: command-end
-
-  command-end:
-    - include: string-with-substitution
-    - include: string-without-substitution
-    - include: command-parameters
-    - include: numbers
-    - include: booleans
-    - include: variables
-    - meta_scope: meta.function-call.sdc
-    - match: (;)
-      captures:
-        1: punctuation.terminator.sdc
-      pop: true
-    - match: (\\)\s*\n
-      captures:
-        1: punctuation.separator.continuation.sdc
-    - match: \n
-      pop: true
-    # Catching the end of an evaluation section.
-    - match: (?=\])
-      pop: true
-    - include: evaluation-bracket-start
-
-  # An evaluation bracket may have any command in it
-  evaluation-bracket-start:
-    - match: (\[)
-      captures:
-        1: punctuation.section.brackets.begin.sdc
-      push:
-        - meta_scope: meta.brackets.sdc
-        - include: tcl-commands
-        - include: sdc-commands
-        - match: (\])
-          captures:
-            1: punctuation.section.brackets.end.sdc
-          pop: true
+    - match: ""
+      push: "Packages/TCL/Tcl.sublime-syntax"
+      with_prototype:
+        - include: command-parameters
+        - include: xilinx-parameters-extensions
 
   command-parameters:
     - match: |-
@@ -108,7 +26,7 @@ contexts:
         )\b
       captures:
         1: punctuation.separator.parameter.sdc
-        2: support.type.sdc
+        2: support.type.std.sdc
 
   xilinx-parameters-extensions:
     - match: |-
@@ -128,58 +46,10 @@ contexts:
           ref_pin_name|rloc|rlc_origin|rlocs|route_status|rpm|rpm_grid|slew|
           u_set|use_dsp48|used_in|vccaux_io
         )\b
-
-  numbers:
-    - match: \b[\+\-]?\d[\d_]*(\.\d[\d_]*)?([eE][\+\-]?\d[\d_]*)?
-      scope: constant.numeric.sdc
-
-  booleans:
-    - match: (?i)\b(true|false)\b
       captures:
-        1: constant.language.sdc
+        1: punctuation.separator.parameter.sdc
+        2: support.type.xilinx.sdc
 
-  variables:
-    - match: (\$(?=[a-zA-Z\d]))
-      captures:
-        1: punctuation.definition.variable.sdc
-      push:
-        - clear_scopes: 1
-        - meta_scope: meta.interpolation.sdc
-        - match: ([a-zA-Z\d](\w|(\:\:[:]*))*)
-          captures:
-            1: variable.other.sdc
-        - match: \b
-          pop: true
 
-  string-with-substitution:
-    - match: (\")
-      captures:
-        1: punctuation.definition.string.begin.sdc
-      push:
-        - meta_scope: string.quoted.double.sdc
-        - include: escaped-characters
-        - include: variables
-        - match: (\")
-          captures:
-            1: punctuation.definition.string.end.sdc
-          pop: true
-
-  string-without-substitution:
-    - match: ({)
-      captures:
-        1: punctuation.definition.string.begin.sdc
-      push:
-        - meta_scope: string.quoted.braces.sdc
-        - match: (\\)
-          captures:
-            1: punctuation.continuation.sdc
-        - match: (})
-          captures:
-            1: punctuation.definition.string.end.sdc
-          pop: true
-
-  escaped-characters:
-    - match: (\\.)
-      scope: constant.character.character-class.sdc
 
 
