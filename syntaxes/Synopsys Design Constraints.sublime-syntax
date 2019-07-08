@@ -1,0 +1,55 @@
+%YAML 1.2
+---
+name: Synopsys Design Constraints
+file_extensions:
+  - sdc
+scope: source.sdc
+
+contexts:
+  main:
+    - match: ""
+      push: "Packages/TCL/Tcl.sublime-syntax"
+      with_prototype:
+        - include: standard-parameters
+        - include: xilinx-parameters-extensions
+
+  standard-parameters:
+    - match: |-
+        (?xi)\s(\+|\-)(
+          add|add_delay|asynchronous|capacitance|clock|clock_fall|
+          decimal_places|divide_by|end|edge_rise|lib_cell|fall|fall_from|
+          fall_to|from|from_clock|group|hold|include_generated_clock|library|
+          logically_exclusive|master_clock|max|min|multiply_by|name|of_objects|
+          offset|period|phase|physically_exclusive|picofarads|picoseconds|
+          pin_load|edge_fall|input|output|port|rise|ris|pin|rise_from|rise_to|
+          section_id|setup|setup|source|through|time|to|to_clock|unit|waveform
+        )\b
+      captures:
+        1: punctuation.separator.switch.sdc
+        2: support.type.std.sdc
+
+  xilinx-parameters-extensions:
+    - match: |-
+        (?xi)\s(\+|\-)(
+          async_reg|bel|black_box|buffer_type|cfgbvs|clock_buffer_type|
+          clock_dedicated_route|clock_region|clock_root|config_mode|
+          config_voltage|contain_routing|dci_cascade|delay_bypass|
+          diff_term|diff_term_adv|direct_enable|direct_reset|dont_touch|drive|
+          edif_extra_search_paths|equalization|exclude_placement|fsm_encoding|
+          fsm_safe_state|gated_clock|h_set|hiodelay_group|hlutnm|hu_set|
+          ibuf_low_pwr|in_term|internal_vref|io_buffer_type|iob|iobdelay|
+          iodelay_group|iostandard|ip_repo_paths|keep|keep_compatible|
+          keep_hierarchy|keeper|loc|lock_pins|lutnm|lvds_pre_emphasis|
+          mark_debug|max_fanout|odt|offset_cntrl|package_pin|path_mode|pblock|
+          post_crc|post_crc_action|post_crc_freq|post_crc_init_flag|
+          post_crc_source|pre_emphasis|prohibit|pulldown|pullup|ref_name|
+          ref_pin_name|rloc|rlc_origin|rlocs|route_status|rpm|rpm_grid|slew|
+          u_set|use_dsp48|used_in|vccaux_io
+        )\b
+      captures:
+        1: punctuation.separator.switch.sdc
+        2: support.type.xilinx.sdc
+
+
+
+
