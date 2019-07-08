@@ -6,8 +6,8 @@
 			"details": "https://github.com/leoheck/sublime-synopsys-constraints",
 			"releases": [
 				{
-					"version": "0.2",
-					"url": "https://github.com/leoheck/sublime-synopsys-constraints/tags/0.2",
+					"version": "0.2.0",
+					"url": "https://github.com/leoheck/sublime-synopsys-constraints/tags/0.2.0",
 					"date": "2019-6-8 16:21:00",
 					"sublime_text": "*"
 				}
