@@ -12,6 +12,7 @@ contexts:
       with_prototype:
         - include: standard-parameters
         - include: xilinx-parameters-extensions
+        - include: intel-parameters-extensions
 
   standard-parameters:
     - match: |-
@@ -50,6 +51,14 @@ contexts:
         1: punctuation.separator.switch.sdc
         2: support.type.xilinx.sdc
 
+  intel-parameters-extensions:
+    - match: |-
+        (?xi)\s(\+|\-)(
+          reference_pin
+        )\b
+      captures:
+        1: punctuation.separator.switch.sdc
+        2: support.type.intel.sdc
 
 
 
